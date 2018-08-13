@@ -1,0 +1,13 @@
+@mixin no-scroll{
+  -ms-overflow-style: none;  // IE 10+
+  //overflow: -moz-scrollbars-none;  // Firefox
+  padding-right: 50px;
+
+  &::-webkit-scrollbar {
+    display: none; // Safari and Chrome
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+}

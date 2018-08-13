@@ -1,0 +1,28 @@
+{
+  "name": "gulp-template",
+  "version": "0.2.0",
+  "description": "Frontend template",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Igor Petrov",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^8.2.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "browser-sync": "^2.23.6",
+    "cssnano": "^3.10.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-sass": "^4.0.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-sass-glob": "^1.0.9",
+    "gulp-rigger": "^0.5.8"
+  }
+}
