@@ -33,6 +33,7 @@ $(document).ready(function () {
     var div_sw = $(div)[0].scrollWidth;
     var div_w = div.outerWidth(true);
     div_sw - div_w <= item.outerWidth(true) ? arrows.hide() : arrows.show();
+    div.trigger('scroll');
   };
 
   var scrollArrow = function (scrollWrap) {
@@ -55,9 +56,12 @@ $(document).ready(function () {
 
     $('.js-arrow-l', scrollWrap).on('click', function () {
       div.animate({scrollLeft: '-=' + item.outerWidth(true)}, 150);
+
     });
     $('.js-arrow-r', scrollWrap).on('click', function () {
       div.animate({scrollLeft: '+=' + item.outerWidth(true)}, 150);
+      console.log(item.outerWidth(true));
+      console.log(div);
     });
     div.trigger('scroll');
   };
@@ -88,16 +92,8 @@ $(document).ready(function () {
     $(this).toggleClass('is-active-mob');
   });
 
-  //Горизонтальный скролл
-  $(window).resize(function () {
-    if ($(window).width() < 767) {
-      $('.js-scroll').unmousewheel();
-      $('.js-scroll').on('mousewheel', function (e) {
-        this.scrollLeft -= (e.deltaY * 40);
-        e.preventDefault();
-      });
-    } else {
-      $('.js-scroll').unmousewheel();
-    }
-  });
+  $('.js-popup').on('click', function () {
+    !$(this).hasClass('mod-popup-active') &&
+    $('.js-popup').removeClass('mod-popup-active') && $(this).addClass('mod-popup-active');
+  })
 });

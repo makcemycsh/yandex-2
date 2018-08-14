@@ -53,7 +53,7 @@
               </div>
             </div>
             <div class="b-info__tabs">
-              <div class="b-info__tabs-wrap js-tabs js-scroll">
+              <div class="b-info__tabs-wrap js-tabs">
                 <div class="b-tab">
                   <i class="b-tab__ico mod-temp-1"></i>
                   <div class="b-tab__content">
@@ -100,10 +100,14 @@
       <section class="b-content__main">
         <header class="b-content__title">
           <h2>Избранные сценарии</h2>
+          <div class="b-content__arrows js-arrows" data-scroll="b-scenarios__wrap">
+            <button class="mod-disabled js-arrow-l"><i class="b-arrow mod-arrow-left"></i></button>
+            <button class="js-arrow-r"><i class="b-arrow mod-arrow-right"></i></button>
+          </div>
         </header>
         <div class="b-content__inner">
-          <div class="b-scenarios js-scroll">
-            <div class="b-scenarios__wrap js-scenarios">
+          <div class="b-scenarios">
+            <div class="b-scenarios__wrap js-scroll">
               <div class="b-tab mod-height-100">
                 <i class="b-tab__ico mod-sun-2"></i>
                 <div class="b-tab__content">
@@ -366,10 +370,6 @@
 
             </div>
           </div>
-        </div>
-        <div class="b-content__arrows js-arrows" data-scroll="b-scenarios">
-          <button class="mod-disabled js-arrow-l"><i class="b-arrow mod-arrow-left"></i></button>
-          <button class="js-arrow-r"><i class="b-arrow mod-arrow-right"></i></button>
         </div>
       </section>
     </div>
@@ -385,11 +385,15 @@
           <span data-cat='3' class="b-cat__item">Лампочки</span>
           <span data-cat='4' class="b-cat__item">Камеры</span>
         </div>
+        <div class="b-content__arrows js-arrows" data-scroll="b-favorites__wrap">
+          <button class="mod-disabled js-arrow-l"><i class="b-arrow mod-arrow-left"></i></button>
+          <button class="js-arrow-r"><i class="b-arrow mod-arrow-right"></i></button>
+        </div>
       </header>
       <div class="b-content__inner">
         <div class="b-favorites">
-          <div class="b-favorites__wrap js-scroll js-cat-items">
-            <div data-cat='1' data-popup='1' class="b-tab mod-popup-active">
+          <div class="b-favorites__wrap js-cat-items">
+            <div data-cat='1' data-popup='1' class="b-tab js-popup mod-popup-active">
               <i class="b-tab__ico mod-sun-2"></i>
               <div class="b-tab__content">
                 <p class="b-tab__title">
@@ -400,7 +404,7 @@
                 </p>
               </div>
             </div>
-            <div data-cat='2' data-popup='2' class="b-tab">
+            <div data-cat='2' data-popup='2' class="b-tab js-popup">
               <i class="b-tab__ico mod-sun-1"></i>
               <div class="b-tab__content">
                 <p class="b-tab__title">
@@ -411,7 +415,7 @@
                 </p>
               </div>
             </div>
-            <div data-cat='3' data-popup='3' class="b-tab">
+            <div data-cat='3' data-popup='3' class="b-tab js-popup">
               <i class="b-tab__ico mod-temp-1"></i>
               <div class="b-tab__content">
                 <p class="b-tab__title">
@@ -422,7 +426,7 @@
                 </p>
               </div>
             </div>
-            <div data-cat='4' data-popup='1' class="b-tab">
+            <div data-cat='4' data-popup='1' class="b-tab js-popup">
               <i class="b-tab__ico mod-sun-1"></i>
               <div class="b-tab__content">
                 <p class="b-tab__title">
@@ -433,7 +437,7 @@
                 </p>
               </div>
             </div>
-            <div data-cat='1' data-popup='2' class="b-tab">
+            <div data-cat='1' data-popup='2' class="b-tab js-popup">
               <i class="b-tab__ico mod-sun-2"></i>
               <div class="b-tab__content">
                 <p class="b-tab__title">
@@ -444,7 +448,7 @@
                 </p>
               </div>
             </div>
-            <div data-cat='2' data-popup='3' class="b-tab">
+            <div data-cat='2' data-popup='3' class="b-tab js-popup">
               <i class="b-tab__ico mod-sun-1"></i>
               <div class="b-tab__content">
                 <p class="b-tab__title">
@@ -455,7 +459,7 @@
                 </p>
               </div>
             </div>
-            <div data-cat='3' data-popup='1' class="b-tab">
+            <div data-cat='3' data-popup='1' class="b-tab js-popup">
               <i class="b-tab__ico mod-sun-2"></i>
               <div class="b-tab__content">
                 <p class="b-tab__title">
@@ -466,7 +470,7 @@
                 </p>
               </div>
             </div>
-            <div data-cat='4' data-popup='2' class="b-tab">
+            <div data-cat='4' data-popup='2' class="b-tab js-popup">
               <i class="b-tab__ico mod-sun-1"></i>
               <div class="b-tab__content">
                 <p class="b-tab__title">
@@ -477,7 +481,7 @@
                 </p>
               </div>
             </div>
-            <div data-cat='1' data-popup='3' class="b-tab">
+            <div data-cat='1' data-popup='3' class="b-tab js-popup">
               <i class="b-tab__ico mod-temp-1"></i>
               <div class="b-tab__content">
                 <p class="b-tab__title">
@@ -488,7 +492,7 @@
                 </p>
               </div>
             </div>
-            <div data-cat='2' data-popup='1' class="b-tab">
+            <div data-cat='2' data-popup='1' class="b-tab js-popup">
               <i class="b-tab__ico mod-sun-1"></i>
               <div class="b-tab__content">
                 <p class="b-tab__title">
@@ -499,7 +503,7 @@
                 </p>
               </div>
             </div>
-            <div data-cat='3' data-popup='2' class="b-tab">
+            <div data-cat='3' data-popup='2' class="b-tab js-popup">
               <i class="b-tab__ico mod-sun-2"></i>
               <div class="b-tab__content">
                 <p class="b-tab__title">
@@ -510,7 +514,7 @@
                 </p>
               </div>
             </div>
-            <div data-cat='4' data-popup='3' class="b-tab">
+            <div data-cat='4' data-popup='3' class="b-tab js-popup">
               <i class="b-tab__ico mod-sun-1"></i>
               <div class="b-tab__content">
                 <p class="b-tab__title">
@@ -524,12 +528,11 @@
           </div>
         </div>
       </div>
-      <div class="b-content__arrows js-arrows" data-scroll="b-favorites__wrap">
-        <button class="mod-disabled js-arrow-l"><i class="b-arrow mod-arrow-left"></i></button>
-        <button class="js-arrow-r"><i class="b-arrow mod-arrow-right"></i></button>
-      </div>
     </section>
   </div>
+</div>
+<div class="popup">
+  <div class="content"></div>
 </div>
 <div class="b-footer mod-b-inner">
  <span class="b-footer__menu">
@@ -544,8 +547,7 @@
 </div>
 
 <script src="scripts/jqvery/jquery-3.3.1.min.js"></script>
-<script src="scripts/mouseweel/jquery.mousewheel.js"></script>
-<script src="scripts/main.js"></script>
+<script src="scripts/main.js" defer></script>
 
 </body>
 </html>

@@ -1,13 +1,56 @@
-@mixin no-scroll{
-  -ms-overflow-style: none;  // IE 10+
-  //overflow: -moz-scrollbars-none;  // Firefox
-  padding-right: 50px;
+@mixin no-scroll {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -ms-overflow-style: none; // IE 10+
+  //overflow: -moz-scrollbars-none; // Firefox
+  &::-webkit-scrollbar {
+    display: none; // Safari and Chrome
+    background: transparent;
+  }
+  &::-webkit-scrollbar {
+    width: 0 !important;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+  @-moz-document url-prefix() {
+    padding-right: 50px;
+    width: 100vw;
+    box-sizing: content-box;
+  }
+}
 
+@mixin no-scroll-w {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -ms-overflow-style: none; // IE 10+
   &::-webkit-scrollbar {
     display: none; // Safari and Chrome
     background: transparent;
   }
   &::-webkit-scrollbar-thumb {
     background: transparent;
+  }
+  @-moz-document url-prefix() {
+    padding-right: 50px;
+  }
+}
+
+@mixin no-scroll-h {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  -ms-overflow-style: none; // IE 10+
+  &::-webkit-scrollbar {
+    display: none; // Safari and Chrome
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
+  }
+  @-moz-document url-prefix() {
+    padding-bottom: 50px;
+  }
+  @media(min-width: $t) {
+    overflow-x: hidden;
   }
 }

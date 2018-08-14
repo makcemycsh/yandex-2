@@ -1,0 +1,140 @@
+.mod-b-inner {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1280px;
+  box-sizing: border-box;
+  @media (min-width: $t) {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+  @media (min-width: $d + 40px) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+
+.mod-disabled {
+  pointer-events: none;
+  opacity: 0.3;
+}
+
+.mod-mob-hidden {
+  display: none;
+  @media (min-width: $t) {
+    display: block;
+  }
+}
+
+.head-is-fixed {
+  .b-head {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    z-index: 10;
+    padding: 0 20px;
+    box-sizing: border-box;
+    @media (min-width: $t) {
+      padding: 0;
+      &__menu {
+        .b-head__nav-wrap {
+          position: fixed;
+          background: #F0F0F0;
+          height: 100%;
+          top: 0;
+          z-index: 2;
+          right: 0;
+          min-width: 250px;
+          padding: 120px 30px 30px;
+          box-sizing: border-box;
+          transform: translateX(100%);
+          transition: right .45s ease-in-out;
+          nav {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            overflow-x: hidden;
+          }
+          a {
+            font-weight: bold;
+            line-height: 20px;
+            margin-bottom: 0.5rem;
+            opacity: 0.6;
+            &:last-child {
+              margin-bottom: 0;
+            }
+            &.mod-active {
+              opacity: 1;
+            }
+          }
+        }
+      }
+      &__trigger {
+        position: absolute;
+        display: block;
+        top: 50%;
+        right: 0;
+        margin-top: -(($bar-thickness*5) / 2);
+        padding: $bar-thickness*2 0;
+        transition: 0.2s ease-in-out;
+        z-index: 10;
+        margin-right: 20px;
+
+        .b-bars {
+          position: relative;
+          cursor: pointer;
+          &,
+          &:before,
+          &:after {
+            width: $bar-length;
+            height: $bar-thickness;
+            background-color: $text-color-main;
+            border-radius: $bar-thickness;
+            transition: 0.2s ease-in-out;
+          }
+          &:before,
+          &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            will-change: transform;
+          }
+          &:before {
+            transform: translateY(-($bar-thickness*2));
+          }
+          &:after {
+            transform: translateY(($bar-thickness*2));
+          }
+        }
+        &.is-active {
+          transform: rotate(-45deg);
+          .b-bars {
+            &:before,
+            &:after {
+              transform: translateX(0) rotate(-90deg);
+            }
+          }
+          & + .b-head__nav-wrap {
+            transform: translateX(0%);
+            transition: transform 0.25s ease-in-out;
+          }
+        }
+        &:after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          padding: 0.5rem;
+          cursor: pointer;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+  }
+}
