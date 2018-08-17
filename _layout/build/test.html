@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<style>
+  svg{
+    width: 220px;
+    height: 216px;
+    overflow: visible;
+    padding: 20px;
+  }
+  .circle {
+    cx: 110;
+    cy: 110;
+    r: 108px;
+    fill: #fff;
+    stroke: #333;
+    stroke-width: 48px;
+    opacity: 0.7;
+    stroke-dasharray: 1.4;
+    transform: rotate(45deg) translate(46px, -110px);
+  }
+  .circle2 {
+    cx: 110;
+    cy: 110;
+    r: 108px;
+    fill: #fff;
+    stroke: white;
+    stroke-width: 48px;
+    opacity: 1;
+    stroke-dasharray: 1.4;
+    stroke-dashoffset: 1px;
+    transform: rotate(45deg) translate(46px, -110px);
+  }
+  .circle3 {
+    cx: 110;
+    cy: 110;
+    r: 108px;
+    fill: transparent;
+    stroke: white;
+    stroke-width: 80px;
+    stroke-dasharray: 570px;
+    stroke-dashoffset: 400px;
+    transform: rotate(45deg) translate(46px, -110px);
+  }
+  .circle4 {
+    cx: 110;
+    cy: 110;
+    r: 108px;
+    fill: transparent;
+    stroke: yellow;
+    stroke-width: 48px;
+    stroke-dasharray: 1180px;
+    stroke-dashoffset: 500px;
+    transform: rotate(45deg) translate(46px, -110px);
+    position: relative;
+    /*stroke-dasharray: 670px;*/
+    /*stroke-dasharray: 1180px;*/
+  }
+</style>
+<div class="b-circle-reg">
+<svg>
+  <circle  cx="110"
+           cy="110"
+           r="108px" class="circle"></circle>
+  <circle     cx="110"
+              cy="110"
+              r="108px" class="circle4"></circle>
+  <circle  cx="110"
+           cy="110"
+           r="108px" class="circle2"></circle>
+  <circle  cx="110"
+           cy="110"
+           r="108px" class="circle3"></circle>
+</svg>
+</div>
+</body>
+</html>

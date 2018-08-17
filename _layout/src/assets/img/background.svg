@@ -20,7 +20,7 @@
                             <g id="Screen">
                                 <g id="background">
                                     <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
-                                    <use fill="#FEFEFE" fill-rule="evenodd" xlink:href="#path-1"></use>
+                                    <use fill="none" fill-rule="evenodd" xlink:href="#path-1"></use>
                                 </g>
                             </g>
                         </g>

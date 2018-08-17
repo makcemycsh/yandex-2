@@ -1,0 +1,8 @@
+<svg>
+    <linearGradient id="linear-gradient">
+        <stop offset="0%" stop-color="blue"/>
+        <stop offset="100%" stop-color="aliceblue"/>
+    </linearGradient>
+    <circle class="circle"></circle>
+    <circle class="circle2"></circle>
+</svg>
