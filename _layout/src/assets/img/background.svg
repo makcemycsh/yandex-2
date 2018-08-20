@@ -11,7 +11,7 @@
             <feColorMatrix values="0 0 0 0 0.524208121   0 0 0 0 0.475951723   0 0 0 0 0.279116418  0 0 0 0.446388134 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
         </filter>
     </defs>
-    <g id="Final" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Final" stroke="none" stroke-width="1" fill="#fff" fill-rule="evenodd">
         <g id="v1-1-4-mobile-floor" transform="translate(-95.000000, -250.000000)">
             <g id="Group" transform="translate(0.000000, -44.000000)">
                 <g id="Group-5" transform="translate(20.000000, 111.000000)">

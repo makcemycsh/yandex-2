@@ -1,0 +1,68 @@
+.ico{
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  &.mod-temp-1 {
+    background-image: url(../assets/img/icon_temperature@1x.png);
+    background-image: url(../assets/img/icon_temperature@2x.png);
+    background-image: url(../assets/img/icon_temperature1.svg);
+  }
+  &.mod-temp {
+    background-image: url(../assets/img/icon_temperature_2@1x.png);
+    background-image: url(../assets/img/icon_temperature_2@2x.png);
+    background-image: url(../assets/img/icon_temperature_2.svg);
+    &[data-active="0"]{
+      background-image: url(../assets/img/icon_temperature@1x.png);
+      background-image: url(../assets/img/icon_temperature@2x.png);
+      background-image: url(../assets/img/icon_temperature1.svg);
+    }
+  }
+  &.mod-sun-1 {
+    background-image: url(../assets/img/icon_sun@1x.png);
+    background-image: url(../assets/img/icon_sun@2x.png);
+    background-image: url(../assets/img/icon_sun_1.svg);
+  }
+  &.mod-sun{
+    background-image: url(../assets/img/icon_sun_2@1x.png);
+    background-image: url(../assets/img/icon_sun_2@2x.png);
+    background-image: url(../assets/img/icon_sun_2.svg);
+    &[data-active="0"]{
+      background-image: url(../assets/img/icon_sun@1x.png);
+      background-image: url(../assets/img/icon_sun@2x.png);
+      background-image: url(../assets/img/icon_sun_1.svg);
+    }
+  }
+  &.mod-sun-2 {
+    background-image: url(../assets/img/icon_sun_2@1x.png);
+    background-image: url(../assets/img/icon_sun_2@2x.png);
+    background-image: url(../assets/img/icon_sun_2.svg);
+  }
+  &.mod-temp-2 {
+    background-image: url(../assets/img/icon_temperature_2@1x.png);
+    background-image: url(../assets/img/icon_temperature_2@2x.png);
+    background-image: url(../assets/img/icon_temperature_2.svg);
+  }
+  &.mod-clock {
+    background-image: url(../assets/img/icon_scheduled@1x.png);
+    background-image: url(../assets/img/icon_scheduled@2x.png);
+    background-image: url(../assets/img/icon_scheduled.svg);
+  }
+  &.mod-cloud {
+    height: 18px;
+    width: 18px;
+    background-image: url(../assets/img/cloud-drizzle@1x.png);
+    background-image: url(../assets/img/cloud-drizzle@2x.png);
+    background-image: url(../assets/img/cloud-drizzle.svg);
+    @media (min-width: $t) {
+      height: 26px;
+      width: 26px;
+    }
+  }
+  &.mod-large {
+    height: 40px;
+    width: 40px;
+  }
+}
