@@ -1,3 +1,4 @@
+//Попап
 .b-popup {
   display: none;
   position: fixed;
@@ -9,13 +10,11 @@
   padding: 20px;
   box-sizing: border-box;
   min-width: 300px;
-
   &.is-open {
     animation: popup-open 0.25s ease-in-out forwards;
     display: flex;
     flex-direction: column;
   }
-
   &__head {
     display: flex;
     justify-content: space-between;
@@ -37,6 +36,7 @@
     flex: 1 1 auto;
     display: flex;
     align-items: center;
+    flex-direction: column;
   }
   &__tite {
     font-size: 27px;
@@ -48,6 +48,7 @@
       content: attr(data-title);
     }
   }
+
   &__value {
     font-weight: bold;
     font-size: 36px;
@@ -84,9 +85,9 @@
       padding: 20px;
       box-sizing: border-box;
       margin-bottom: 16px;
+      transition: 0.2s;
       &:active {
-        margin-top: -1px;
-        margin-bottom: -1px;
+        transform: scale(0.99);
       }
       &:last-child {
         margin-bottom: 0;
@@ -95,10 +96,27 @@
         background: $yellow;
         color: black;
       }
+
     }
 
   }
-
+  .b-tabs {
+    @include no-scroll-h;
+    display: flex;
+    position: relative;
+    align-self: flex-start;
+    margin-bottom: 24px;
+    flex-direction: row;
+    width: 100%;
+    padding-bottom: 0;
+    white-space: nowrap;
+    &__item {
+      display: inline-block;
+      &.is-active {
+        order: inherit;
+      }
+    }
+  }
   @media(min-width: $t) {
     width: 630px;
     height: auto;
@@ -116,19 +134,23 @@
         }
       }
     }
+    &__inner {
+      display: block;
+    }
   }
 }
+//Попап END
 
+//Круглый регулятор температуры
 .b-circle {
   width: 221px;
   height: 221px;
   border-radius: 50%;
   position: relative;
-  margin: 0 auto;
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-
   &__inner {
     width: 178px;
     height: 178px;
@@ -140,7 +162,6 @@
     z-index: 2;
     border-radius: 50%;
     cursor: pointer;
-
   }
   &__dot {
     position: absolute;
@@ -151,7 +172,6 @@
     transform: rotate(0deg);
     transform-origin: center bottom;
     z-index: 2;
-
     &:before {
       content: "";
       position: absolute;
@@ -230,7 +250,6 @@
     color: $text-color-main;
     font-weight: bold;
     z-index: 2;
-
     pointer-events: none;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -244,7 +263,9 @@
     }
   }
 }
+//Круглый регулятор температуры END
 
+//page
 .b-page {
   display: flex;
   flex-direction: column;
@@ -271,7 +292,9 @@
     }
   }
 }
+//page END
 
+// header
 .b-head {
   color: $text-color-main;
   position: relative;
@@ -279,7 +302,8 @@
   &__wrap {
     display: flex;
     align-items: center;
-    padding: 18px 0;
+    padding-top: 18px;
+    padding-bottom: 18px;
     position: relative;
   }
   &__logo {
@@ -288,7 +312,6 @@
     margin-right: 52px;
     background-image: url(../assets/img/ya-logo-home@1x.png);
     background-image: url(../assets/img/ya-logo-home@2x.png);
-    //background-image: url(../assets/img/ya-logo-home.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -296,7 +319,6 @@
       width: 100%;
       height: 100%;
     }
-
   }
   &__menu {
     .b-head__nav-wrap {
@@ -394,11 +416,11 @@
       transform: translate(-50%, -50%);
     }
   }
-
   @media (min-width: $t) {
     border-bottom: 1px solid #F0F0F0;
     &__wrap {
-      padding: 33px 0
+      padding-top: 33px;
+      padding-bottom: 33px;
     }
     &__trigger {
       display: none
@@ -426,7 +448,9 @@
     }
   }
 }
+// header END
 
+//content
 .b-content {
   flex: 1 0 auto;
   font-family: $text-ffamily;
@@ -486,7 +510,6 @@
     transform: translate(0, -50%);
     visibility: hidden;
     pointer-events: none;
-
     button {
       display: flex;
       align-items: center;
@@ -547,20 +570,20 @@
     }
   }
 }
+//content END
 
+//footer
 .b-footer {
   flex: 0 0 auto;
   background: white;
   margin-bottom: 0;
   margin-top: auto;
   padding: 22px 0 25px;
-
   font-size: 12px;
   line-height: 14px;
   color: $text-color-grey;
   letter-spacing: 0.01px;
   font-family: $text-ffamily;
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -595,6 +618,7 @@
     }
   }
 }
+//footer END
 
 .b-info {
   width: 100%;
@@ -610,7 +634,6 @@
   border-radius: 16px;
   font-family: $text-ffamily;
   color: $text-color-main;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -662,7 +685,6 @@
     margin-top: 20px;
     &-wrap {
       @include no-scroll-h;
-      //@extend %no-scroll;
       width: 100%;
       height: auto;
       display: flex;
@@ -744,7 +766,6 @@
     font-size: 24px;
     line-height: 28px;
     font-weight: bold;
-
     @media (min-width: $t) {
       font-size: 36px;
       line-height: 42px;
@@ -886,7 +907,7 @@
   }
 }
 
-.b-cat {
+.b-tabs {
   font-family: $text-ffamily;
   position: absolute;
   display: flex;
@@ -895,9 +916,11 @@
   right: 0;
   top: 0;
   padding: 5px 0;
+  box-sizing: border-box;
+  padding-bottom: 12px !important;
   &.is-active-mob {
     background: $tab-bg-color;
-    .b-cat__item {
+    .b-tabs__item {
       display: inline-block;
     }
   }
@@ -908,7 +931,6 @@
     font-weight: bold;
     padding: 8px 15px;
     color: black;
-
     border-radius: 20px;
     cursor: pointer;
     &:last-child {
@@ -924,7 +946,7 @@
     position: static;
     width: auto;
     display: inline-block;
-    padding: 0;
+    padding: 0 !important;
     background: transparent;
     &.is-active-mob {
       background: transparent;
@@ -937,7 +959,6 @@
 }
 
 .b-range {
-  margin-top: 25px;
   position: relative;
   color: white;
   font-size: 18px;
@@ -945,63 +966,77 @@
   font-weight: bold;
   width: 60px;
   height: 336px;
-  margin: 0 auto;
-  //transform: rotate(90deg);
-  //width: 336px;
+  margin: auto;
   &:before {
-    content: attr(data-min);
+    content: attr(data-max);
     position: absolute;
-    //left: 20px;
-    //top: 50%;
-    //transform: translateY(-50%);
-
     left: 50%;
     top: 20px;
     transform: translateX(-50%);
+    z-index: 1;
   }
   &:after {
-    content: attr(data-max);
+    content: attr(data-min);
     position: absolute;
-    //right: 20px;
-    //top: 50%;
-    //transform: translateY(-50%);
-    //transform: rotate(-90deg);
     left: 50%;
     bottom: 20px;
     transform: translateX(-50%);
-
   }
 
   input[type=range] {
     -webkit-appearance: none;
     height: 60px;
     width: 336px;
-    background-image: linear-gradient(-90deg, #068FFF 2%, #FFD800 51%, #F76B1C 100%);
+
     border-radius: 30px;
     padding: 0;
     margin: 0;
-    transform: rotate(90deg) translate(140px, 137px);
-    position:  absolute;
+    transform: rotate(-90deg) translate(-133px, -138px);
+    position: absolute;
+    background-image: linear-gradient(90deg, #068FFF 2%, #FFD800 51%, #F76B1C 100%);
   }
-
+  &.mod-temp {
+    input[type=range] {
+      background-image: linear-gradient(90deg, #068FFF 2%, #FFD800 51%, #F76B1C 100%);
+    }
+  }
+  &.mod-sun {
+    input[type=range] {
+      background-image: linear-gradient(90deg, #FFE682 2%, #FF9E00 98%);
+    }
+    &:before {
+      content: "";
+      background-image: url(../assets/img/icon_sun_max.png);
+      background-image: url(../assets/img/icon_sun_max.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      left: 50%;
+      top: 16px;
+      transform: translateX(-50%);
+      z-index: 1;
+    }
+    &:after {
+      content: "";
+      background-image: url(../assets/img/icon_sun_min.png);
+      background-image: url(../assets/img/icon_sun_min.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      left: 50%;
+      bottom: 16px;
+      transform: translateX(-50%);
+    }
+  }
   input[type=range]:focus {
     outline: none;
   }
-
-  //input[type=range]::-webkit-slider-runnable-track {
-  //  background-image: linear-gradient(-90deg, #068FFF 2%, #FFD800 51%, #F76B1C 100%);
-  //  border-radius: 30px;
-  //
-  //}
-  //
-  //input[type=range]:focus::-webkit-slider-runnable-track {
-  //  background-image: linear-gradient(-90deg, #068FFF 2%, #FFD800 51%, #F76B1C 100%);
-  //}
-  //
-  //input[type=range]::-moz-range-track {
-  //  background-image: linear-gradient(-90deg, #068FFF 2%, #FFD800 51%, #F76B1C 100%);
-  //}
-
   input[type=range]::-ms-track {
     width: 100%;
     height: 60px;
@@ -1012,7 +1047,6 @@
     border-width: 30px 0;
     color: transparent;
   }
-
   input[type=range]::-webkit-slider-thumb {
     border-radius: 60px;
     background: transparent;
@@ -1021,12 +1055,10 @@
     height: 68px;
     width: 68px;
     margin: -4px 0;
-    //margin: -4px -4px -4px -4px;
     border: 4px solid white;
     position: relative;
     box-shadow: 0px 0px 0px 3px rgba(51, 51, 51, 0.10) inset;
   }
-
   input[type=range]::-moz-range-thumb {
     border-radius: 60px;
     background: transparent;
@@ -1039,7 +1071,12 @@
     position: relative;
     box-shadow: 0px 0px 0px 3px rgba(51, 51, 51, 0.10) inset;
   }
-
+  input[type=range]::-moz-focus-outer {
+    border: 0;
+  }
+  input[type=range]::-moz-range-track {
+    opacity: 0;
+  }
   input[type=range]::-ms-thumb {
     border-radius: 60px;
     background: transparent;
@@ -1052,18 +1089,37 @@
     position: relative;
     box-shadow: 0px 0px 0px 3px rgba(51, 51, 51, 0.10) inset;
   }
-
-  //input[type=range]:focus::-ms-fill-lower {
-  //  background-image: linear-gradient(-90deg, #068FFF 2%, #FFD800 51%, #F76B1C 100%);
-  //  border-radius: 30px;
-  //}
-  //
-  //input[type=range]:focus::-ms-fill-upper {
-  //  background-image: linear-gradient(-90deg, #068FFF 2%, #FFD800 51%, #F76B1C 100%);
-  //  border-radius: 30px;
-  //}
   @media(min-width: $t) {
-    transform: rotate(0deg);
     width: 100%;
+    margin-top: 25px;
+    height: 60px;
+    &:after {
+      transform: none;
+      left: 20px;
+    }
+    &:before {
+      transform: none;
+      right: 20px;
+      left: auto;
+      z-index: 1;
+    }
+    &.mod-sun {
+      &:after {
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      &:before {
+        right: 20px;
+        left: auto;
+        z-index: 1;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+    input[type="range"] {
+      transform: none;
+      width: 100%;
+    }
   }
 }

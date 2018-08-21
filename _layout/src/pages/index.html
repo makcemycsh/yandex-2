@@ -3,7 +3,6 @@
   <div class="b-head__wrap mod-b-inner">
     <a class="b-head__logo" href="#"></a>
     <div class="b-head__menu">
-
       <div class="b-head__trigger js-menu-bar">
         <div class="b-bars"></div>
       </div>
@@ -356,8 +355,6 @@
                   </p>
                 </div>
               </div>
-
-
             </div>
           </div>
         </div>
@@ -368,12 +365,12 @@
     <section class="b-content__main">
       <header class="b-content__title">
         <h2>Избранные устройства</h2>
-        <div class="b-cat js-cat">
-          <span class="b-cat__item is-active">Все</span>
-          <span data-cat='1' class="b-cat__item">Кухня</span>
-          <span data-cat='2' class="b-cat__item">Зал</span>
-          <span data-cat='3' class="b-cat__item">Лампочки</span>
-          <span data-cat='4' class="b-cat__item">Камеры</span>
+        <div class="b-tabs js-cat js-change-active">
+          <span class="b-tabs__item is-active">Все</span>
+          <span data-cat='1' class="b-tabs__item">Кухня</span>
+          <span data-cat='2' class="b-tabs__item">Зал</span>
+          <span data-cat='3' class="b-tabs__item">Лампочки</span>
+          <span data-cat='4' class="b-tabs__item">Камеры</span>
         </div>
         <div class="b-content__arrows js-arrows" data-scroll="b-favorites__wrap">
           <button class="mod-disabled js-arrow-l"><i class="b-arrow mod-arrow-left"></i></button>
@@ -387,7 +384,7 @@
                  data-cat='1'
                  data-val='+24'
                  data-popup-class='b-popup-circle-reg'>
-              <i data-active='1' class="ico mod-sun"></i>
+              <i data-active='1' class="ico mod-temp"></i>
               <div class="b-tab__content">
                 <p class="b-tab__title" data-title="Xiaomi Yeelight LED Smart Bulb"></p>
                 <p class="b-tab__text" data-status="Включено"></p>
@@ -403,114 +400,98 @@
                 <p class="b-tab__text" data-status="Включится в 17:00"></p>
               </div>
             </div>
-            <div data-cat='3' data-popup='3' class="b-tab js-popup">
-              <i class="ico mod-temp-1"></i>
+            <div class="b-tab js-popup-open"
+                 data-cat='3'
+                 data-popup-class='b-popup-light-reg'>
+              <i data-active='1' class="ico mod-sun"></i>
               <div class="b-tab__content">
-                <p class="b-tab__title">
-                  Elgato Eve Degree Connected
-                </p>
-                <p class="b-tab__text">
-                  Выключено до 17:00
-                </p>
+                <p class="b-tab__title" data-title="Elgato Eve Degree Connected"></p>
+                <p class="b-tab__text" data-status="Выключено до 17:00"></p>
               </div>
             </div>
-            <div data-cat='4' data-popup='1' class="b-tab js-popup">
-              <i class="ico mod-sun-1"></i>
+            <div class="b-tab js-popup-open"
+                 data-cat='4'
+                 data-popup-class='b-popup-light-reg'>
+              <i data-active='0' class="ico mod-sun"></i>
               <div class="b-tab__content">
-                <p class="b-tab__title">
-                  LIFX Mini Day & Dusk A60 E27
-                </p>
-                <p class="b-tab__text">
-                  Включится в 17:00
-                </p>
+                <p class="b-tab__title" data-title="LIFX Mini Day & Dusk A60 E27"></p>
+                <p class="b-tab__text" data-status="Выключено в 17:00"></p>
               </div>
             </div>
-            <div data-cat='1' data-popup='2' class="b-tab js-popup">
-              <i class="ico mod-sun-2"></i>
+            <div class="b-tab js-popup-open"
+                 data-cat='1'
+                 data-val='+10'
+                 data-popup-class='b-popup-circle-reg'>
+              <i data-active='1' class="ico mod-temp"></i>
               <div class="b-tab__content">
-                <p class="b-tab__title">
-                  Xiaomi Mi Air Purifier 2S
-                </p>
-                <p class="b-tab__text">
-                  Включено
-                </p>
+                <p class="b-tab__title" data-title="Xiaomi Yeelight LED Smart Bulb"></p>
+                <p class="b-tab__text" data-status="Включено"></p>
               </div>
             </div>
-            <div data-cat='2' data-popup='3' class="b-tab js-popup">
-              <i class="ico mod-sun-1"></i>
+            <div class="b-tab js-popup-open"
+                 data-cat='2'
+                 data-val='+18'
+                 data-popup-class='b-popup-temp-reg'>
+              <i data-active='0' class="ico mod-sun"></i>
               <div class="b-tab__content">
-                <p class="b-tab__title">
-                  Philips Zhirui
-                </p>
-                <p class="b-tab__text">
-                  Выключено
-                </p>
+                <p class="b-tab__title" data-title="D-Link Omna 180 Cam"></p>
+                <p class="b-tab__text" data-status="Включится в 17:00"></p>
               </div>
             </div>
-            <div data-cat='3' data-popup='1' class="b-tab js-popup">
-              <i class="ico mod-sun-2"></i>
+            <div class="b-tab js-popup-open"
+                 data-cat='3'
+                 data-popup-class='b-popup-light-reg'>
+              <i data-active='1' class="ico mod-sun"></i>
               <div class="b-tab__content">
-                <p class="b-tab__title">
-                  Xiaomi Yeelight LED Smart Bulb
-                </p>
-                <p class="b-tab__text">
-                  Включено
-                </p>
+                <p class="b-tab__title" data-title="Elgato Eve Degree Connected"></p>
+                <p class="b-tab__text" data-status="Выключено до 17:00"></p>
               </div>
             </div>
-            <div data-cat='4' data-popup='2' class="b-tab js-popup">
-              <i class="ico mod-sun-1"></i>
+            <div class="b-tab js-popup-open"
+                 data-cat='4'
+                 data-popup-class='b-popup-light-reg'>
+              <i data-active='0' class="ico mod-sun"></i>
               <div class="b-tab__content">
-                <p class="b-tab__title">
-                  D-Link Omna 180 Cam
-                </p>
-                <p class="b-tab__text">
-                  Включится в 17:00
-                </p>
+                <p class="b-tab__title" data-title="LIFX Mini Day & Dusk A60 E27"></p>
+                <p class="b-tab__text" data-status="Выключено в 17:00"></p>
               </div>
             </div>
-            <div data-cat='1' data-popup='3' class="b-tab js-popup">
-              <i class="ico mod-temp-1"></i>
+            <div class="b-tab js-popup-open"
+                 data-cat='1'
+                 data-val='+12'
+                 data-popup-class='b-popup-circle-reg'>
+              <i data-active='1' class="ico mod-temp"></i>
               <div class="b-tab__content">
-                <p class="b-tab__title">
-                  Elgato Eve Degree Connected
-                </p>
-                <p class="b-tab__text">
-                  Выключено до 17:00
-                </p>
+                <p class="b-tab__title" data-title="Xiaomi Yeelight LED Smart Bulb"></p>
+                <p class="b-tab__text" data-status="Включено"></p>
               </div>
             </div>
-            <div data-cat='2' data-popup='1' class="b-tab js-popup">
-              <i class="ico mod-sun-1"></i>
+            <div class="b-tab js-popup-open"
+                 data-cat='2'
+                 data-val='+17'
+                 data-popup-class='b-popup-temp-reg'>
+              <i data-active='0' class="ico mod-sun"></i>
               <div class="b-tab__content">
-                <p class="b-tab__title">
-                  LIFX Mini Day & Dusk A60 E27
-                </p>
-                <p class="b-tab__text">
-                  Включится в 17:00
-                </p>
+                <p class="b-tab__title" data-title="D-Link Omna 180 Cam"></p>
+                <p class="b-tab__text" data-status="Включится в 17:00"></p>
               </div>
             </div>
-            <div data-cat='3' data-popup='2' class="b-tab js-popup">
-              <i class="ico mod-sun-2"></i>
+            <div class="b-tab js-popup-open"
+                 data-cat='3'
+                 data-popup-class='b-popup-light-reg'>
+              <i data-active='1' class="ico mod-sun"></i>
               <div class="b-tab__content">
-                <p class="b-tab__title">
-                  Xiaomi Mi Air Purifier 2S
-                </p>
-                <p class="b-tab__text">
-                  Включено
-                </p>
+                <p class="b-tab__title" data-title="Elgato Eve Degree Connected"></p>
+                <p class="b-tab__text" data-status="Выключено до 17:00"></p>
               </div>
             </div>
-            <div data-cat='4' data-popup='3' class="b-tab js-popup">
-              <i class="ico mod-sun-1"></i>
+            <div class="b-tab js-popup-open"
+                 data-cat='4'
+                 data-popup-class='b-popup-light-reg'>
+              <i data-active='0' class="ico mod-sun"></i>
               <div class="b-tab__content">
-                <p class="b-tab__title">
-                  Philips Zhirui
-                </p>
-                <p class="b-tab__text">
-                  Выключено
-                </p>
+                <p class="b-tab__title" data-title="LIFX Mini Day & Dusk A60 E27"></p>
+                <p class="b-tab__text" data-status="Выключено в 17:00"></p>
               </div>
             </div>
           </div>

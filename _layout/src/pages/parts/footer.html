@@ -9,9 +9,8 @@
     <span>© 2001–2017  ООО «Яндекс»</span>
   </div>
 </div>
-
-
 </div>
+<!--Круглый регулятор -->
 <div class="b-popup b-popup-circle-reg">
   <div class="b-popup__content">
     <div class="b-popup__head">
@@ -23,7 +22,7 @@
         <span data-val="+23"> <i class="ico mod-temp mod-large" data-active="0"></i></span>
       </div>
     </div>
-    <div class="b-popup_inner">
+    <div class="b-popup__inner">
       <div class="b-circle js-circle" data-min="-10" data-max="30">
         <div class="b-circle__reg">
           <svg>
@@ -50,11 +49,12 @@
     </div>
   </div>
   <div class="b-popup__btns">
-    <button class="btn mod-color-yellow js-popup-accept">Применить</button>
+    <button class="btn mod-color-yellow js-popup-close">Применить</button>
     <button class="btn mod-color-white js-popup-close">Закрыть</button>
   </div>
 </div>
-
+<!--Круглый регулятор END-->
+<!--Range регулятор температуры-->
 <div class="b-popup b-popup-temp-reg">
   <div class="b-popup__content">
     <div class="b-popup__head">
@@ -66,23 +66,55 @@
         <span data-val="+23"> <i class="ico mod-temp mod-large" data-active="0"></i></span>
       </div>
     </div>
-    <div class="b-popup_inner">
-      <span class="b-cat__item is-active">Вручную</span>
-      <span data-cat="1" class="b-cat__item">Холодно</span>
-      <span data-cat="2" class="b-cat__item">Тепло</span>
-      <span data-cat="3" class="b-cat__item">Жарко</span>
-      <div class="b-range"  data-min="-10" data-max="+30">
-        <input type="range" min="-10" max="30" >
+    <div class="b-popup__inner">
+      <div class="b-tabs js-range-change js-change-active" data-range="js-range-1">
+        <span class="b-tabs__item is-active">Вручную</span>
+        <span data-value="-10" class="b-tabs__item">Холодно</span>
+        <span data-value="20" class="b-tabs__item">Тепло</span>
+        <span data-value="30" class="b-tabs__item">Жарко</span>
+      </div>
+      <div class="b-range mod-temp" data-min="-10" data-max="+30">
+        <input type="range" min="-10" max="30" step="1" class="js-range-1">
       </div>
     </div>
   </div>
   <div class="b-popup__btns">
-    <button class="btn mod-color-yellow js-popup-accept">Применить</button>
+    <button class="btn mod-color-yellow js-popup-close">Применить</button>
     <button class="btn mod-color-white js-popup-close">Закрыть</button>
   </div>
 </div>
+<!--Range регулятор температуры END-->
+<!--Range регулятор света-->
+<div class="b-popup b-popup-light-reg">
+  <div class="b-popup__content">
+    <div class="b-popup__head">
+      <div>
+        <h4 class="b-popup__tite" data-title="Elgato Eve Degree Connected"></h4>
+        <p class="b-popup__status" data-status="Включено"></p>
+      </div>
+      <div class="b-popup__value">
+        <span> <i class="ico mod-sun mod-large" data-active="0"></i></span>
+      </div>
+    </div>
+    <div class="b-popup__inner">
+      <div class="b-tabs js-range-change js-change-active" data-range="js-range-2">
+        <span class="b-tabs__item is-active">Вручную</span>
+        <span data-value="-10" class="b-tabs__item">Дневной свет</span>
+        <span data-value="20" class="b-tabs__item">Вечерний свет</span>
+        <span data-value="30" class="b-tabs__item">Рассве</span>
+      </div>
+      <div class="b-range mod-sun">
+        <input type="range" min="-10" max="30" step="1" class="js-range-2">
+      </div>
+    </div>
+  </div>
+  <div class="b-popup__btns">
+    <button class="btn mod-color-yellow js-popup-close">Применить</button>
+    <button class="btn mod-color-white js-popup-close">Закрыть</button>
+  </div>
+</div>
+<!--Range регулятор света END-->
 <script src="scripts/jqvery/jquery-3.3.1.min.js"></script>
 <script src="scripts/main.js" defer></script>
-
 </body>
 </html>

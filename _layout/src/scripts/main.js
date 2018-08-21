@@ -1,31 +1,31 @@
 $(document).ready(function () {
 
-  var circle = $(".js-circle");
-  var maxVal = circle.attr('data-max');
-  var minVal = circle.attr('data-min');
-  var circleGray = $(".js-circle-rotate");
-  var circleGrayStart = parseFloat($(".js-circle-rotate").attr('data-start'));
-  var circleGrayEnd = parseFloat($(".js-circle-rotate").attr('data-end'));
+  const circle = $(".js-circle");
+  const maxVal = circle.attr('data-max');
+  const minVal = circle.attr('data-min');
+  const circleGray = $(".js-circle-rotate");
+  const circleGrayStart = parseFloat($(".js-circle-rotate").attr('data-start'));
+  const circleGrayEnd = parseFloat($(".js-circle-rotate").attr('data-end'));
 
-  var circleRotate = function (curVal) {
+  const circleRotate = function (curVal) {
     curVal = parseFloat(curVal);
 
     minVal <= curVal && curVal <= maxVal ? '' : maxVal <= curVal ? curVal = maxVal : curVal = minVal;
-    var rotateDeg = (curVal - minVal) / (maxVal - minVal) * (495 - 225) + 225;
-    var rotatePx = circleGrayStart + (curVal - minVal) / (maxVal - minVal) * (circleGrayEnd - circleGrayStart);
+    let rotateDeg = (curVal - minVal) / (maxVal - minVal) * (495 - 225) + 225;
+    let rotatePx = circleGrayStart + (curVal - minVal) / (maxVal - minVal) * (circleGrayEnd - circleGrayStart);
 
     $(".js-circle-dot").css("transform", "rotate(" + rotateDeg + "deg)");
     $(".js-circle-rotate").css("stroke-dasharray", rotatePx + 'px');
 
     $(".js-circle-val").attr('data-val', curVal > 0 ? "+" + curVal : curVal)
   };
-  var circleInit = (function () {
-    var is_dragging;
+  const circleInit = (function () {
+    let is_dragging;
     is_dragging = false;
 
-    var curVal = parseFloat($(".js-circle-val").attr('data-val'));
+    let curVal = parseFloat($(".js-circle-val").attr('data-val'));
     circleRotate(curVal);
-    var angle = (maxVal - curVal) / (maxVal - minVal) * (495 - 225);
+    let angle = (maxVal - curVal) / (maxVal - minVal) * (495 - 225);
 
     $(document).on("mousedown touchstart", ".b-circle", function (e) {
       return is_dragging = true;
@@ -34,7 +34,7 @@ $(document).ready(function () {
       return is_dragging = false;
     });
     return $(window).on("mousemove touchmove", function (e) {
-      var center_x, center_y, delta_x, delta_y, pos_x, pos_y, touch;
+      let center_x, center_y, delta_x, delta_y, pos_x, pos_y, touch;
       if (is_dragging) {
         touch = void 0;
         if (e.originalEvent.touches) {
@@ -57,7 +57,8 @@ $(document).ready(function () {
         curVal = ((angle - 225) / (495 - 225)) * (maxVal - minVal) + parseFloat(minVal);
         curVal = Math.round(curVal);
 
-        return circleRotate(curVal);;
+        return circleRotate(curVal);
+        ;
       }
     });
   }).call(this);
@@ -79,7 +80,8 @@ $(document).ready(function () {
     $(this).toggleClass('is-active');
   });
 
-  var div = $('.js-tabs'),
+  //Если табов мало, то скрываем стрелки навигации
+  let div = $('.js-tabs'),
     div_sh = $(div)[0].scrollHeight,
     div_h = div.height();
   $(div).scroll(function () {
@@ -92,20 +94,22 @@ $(document).ready(function () {
   $(div).trigger('scroll');
 
   //Кнопки для постраничного листания
-  var showArrow = function (div, item, arrows) {
-    var div_sw = $(div)[0].scrollWidth;
-    var div_w = div.outerWidth(true);
+  const showArrow = function (div, item, arrows) {
+    let div_sw = $(div)[0].scrollWidth;
+    let div_w = div.outerWidth(true);
     div_sw - div_w <= item.outerWidth(true) ? arrows.hide() : arrows.show();
     div.trigger('scroll');
   };
 
-  var scrollArrow = function (scrollWrap) {
-    var div = $('.' + scrollWrap.attr('data-scroll')),
+  //Скролл при нажатии на кнопку
+  const scrollArrow = function (scrollWrap) {
+    let div = $('.' + scrollWrap.attr('data-scroll')),
       div_sw = $(div)[0].scrollWidth,
       div_w = div.outerWidth(true);
-    var item = $('.b-tab:first', div);
+    let item = $('.b-tab:first', div);
     showArrow(div, item, scrollWrap);
 
+    //Дизейбл кнопки, если некуда скроллить
     div.scroll(function () {
       div_sw = $(this)[0].scrollWidth;
       div_w = $(this).outerWidth(true);
@@ -126,21 +130,19 @@ $(document).ready(function () {
     });
     div.trigger('scroll');
   };
-  for (var i = 0; i < $('.js-arrows').length; i++) {
+  for (let i = 0; i < $('.js-arrows').length; i++) {
     scrollArrow($('.js-arrows:eq(' + i + ')'));
   }
 
   //Выбор категории
   $('.js-cat').children().on('click', function () {
     if (!$(this).hasClass('is-active')) {
-      var cat = $(this).attr('data-cat');
-      $('.js-cat').children().removeClass('is-active');
-      $(this).addClass('is-active');
+      let cat = $(this).attr('data-cat');
       $('.js-cat-items > :not([data-cat=' + cat + '])').hide();
       $('.js-cat-items > [data-cat=' + cat + ']').show();
       !cat && $(".js-cat-items > [data-cat]").show();
-      for (var i = 0; i < $('.js-arrows').length; i++) {
-        var div = $('.' + $('.js-arrows:eq(' + i + ')').attr('data-scroll'));
+      for (let i = 0; i < $('.js-arrows').length; i++) {
+        let div = $('.' + $('.js-arrows:eq(' + i + ')').attr('data-scroll'));
         showArrow(
           div,
           $('.b-tab:first', div),
@@ -149,16 +151,13 @@ $(document).ready(function () {
       }
     }
   });
+
+  // Активация выпадающего списка с категориями на мобильной версии
   $('.js-cat').on('click', function () {
     $(this).toggleClass('is-active-mob');
   });
 
-  $('.js-popup').on('click', function () {
-    !$(this).hasClass('mod-popup-active') &&
-    $('.js-popup').removeClass('mod-popup-active') && $(this).addClass('mod-popup-active');
-  })
-
-
+  // Открывает попап при клике на таб
   $('.js-tabs').on('click', '.js-popup-open', function () {
     $(this).addClass('is-popup');
     let param = {
@@ -174,8 +173,6 @@ $(document).ready(function () {
     $('[data-status]', param.popupClass).attr('data-status', param.status);
     $('[data-active]', param.popupClass).attr('data-active', param.active);
 
-    console.log(param.active);
-
     $('.b-page').toggleClass('is-fixed');
     $('.b-popup').removeClass('is-open');
 
@@ -183,11 +180,19 @@ $(document).ready(function () {
     param.popupClass.addClass('is-open');
   });
 
+  // Закрытие попапа
   $('.js-popup-close').on('click', function () {
     $('.b-popup').removeClass('is-open');
     $('.b-page').removeClass('is-fixed');
   });
 
+  //Смена состояния активности
+  $('.js-change-active').children().on('click', function () {
+    if (!$(this).hasClass('is-active')) {
+      $(this).parent().children().removeClass('is-active');
+      $(this).addClass('is-active');
+    }
+  });
 
 });
 
