@@ -12,6 +12,9 @@ const gulp         = require('gulp'),
       babel        = require('gulp-babel'),
       uglify       = require('gulp-uglify'),
       rigger       = require('gulp-rigger'),
+      nano         = require('gulp-cssnano'),
+      sourcemaps   = require('gulp-sourcemaps'),
+      concat       = require('gulp-concat'),
       imagemin     = require('gulp-imagemin');
 
 // Обработка ошибок
@@ -51,6 +54,7 @@ gulp.task('build:html', () => {
 
 gulp.task('build:styles', () => {
   gulp.src('src/styles/*.scss')
+    .pipe(sourcemaps.init())
     .pipe(plumber(handleError))
     .pipe(sassGlob())
     .pipe(sass())
@@ -61,6 +65,10 @@ gulp.task('build:styles', () => {
       //   reduceIdents: false
       // })
     ]))
+    .pipe(gulp.dest('build/styles/'))
+    .pipe(nano())
+    .pipe(concat('main.min.css'))
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('build/styles/'));
 
   gulp.src('src/blocks/**/*.scss')
